@@ -15,4 +15,13 @@ pipeline {
             }
         }
     }
+
+    publishHTML (target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: false,
+          keepAll: true,
+          reportDir: './cypress/reports',
+          reportFiles: 'report.html',
+          reportName: "RCov Report"
+        ])
 }
