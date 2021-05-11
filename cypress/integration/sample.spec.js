@@ -37,13 +37,13 @@ context('Test Marvel API', () => {
     })
 
 
-    it('Check by total comics', () => {
-        cy.request('GET', `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
-            .then(res => {
-                expect(res.body.data).to.have.property('total', 48491)
-                expect(res.body).to.have.property('code', 200)
-            });
-    })
+    // it('Check by total comics', () => {
+    //     cy.request('GET', `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    //         .then(res => {
+    //             expect(res.body.data).to.have.property('total', 48491)
+    //             expect(res.body).to.have.property('code', 200)
+    //         });
+    // })
 
     it('Check specific comics', () => {
         const comicsId = '82967';
