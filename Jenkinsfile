@@ -14,14 +14,19 @@ pipeline {
                 sh './node_modules/.bin/cypress run'
             }
         }
+        stage('Publish') {
+            steps {
+                publishHTML (target: [
+                          allowMissing: false,
+                          alwaysLinkToLastBuild: false,
+                          keepAll: true,
+                          reportDir: './cypress/reports',
+                          reportFiles: 'report.html',
+                          reportName: "RCov Report"
+                        ])
+            }
+        }
     }
 
-    publishHTML (target: [
-          allowMissing: false,
-          alwaysLinkToLastBuild: false,
-          keepAll: true,
-          reportDir: './cypress/reports',
-          reportFiles: 'report.html',
-          reportName: "RCov Report"
-        ])
+
 }
