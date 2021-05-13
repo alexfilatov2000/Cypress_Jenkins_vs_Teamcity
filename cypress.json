@@ -1,4 +1,5 @@
 {
+  "video": false,
   "reporter": "cypress-multi-reporters",
   "reporterOptions": {
     "reporterEnabled": "mochawesome",
